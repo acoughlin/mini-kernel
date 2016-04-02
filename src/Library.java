@@ -82,6 +82,8 @@ public class Library {
         return Kernel.interrupt(Kernel.INTERRUPT_USER,
             Kernel.SYSCALL_JOIN, pid, null, null, null);
     } // join
+
+//amc code
     public static long getTime() {
         long[] t = new long[1];
         int rc = Kernel.interrupt(Kernel.INTERRUPT_USER,
@@ -146,4 +148,5 @@ public class Library {
         return Kernel.interrupt(Kernel.INTERRUPT_USER,
             Kernel.SYS_DELETE, 0, fileName, null, null);
     }// delete 
+//end amc code
 } // Library

@@ -90,18 +90,20 @@ public class Kernel {
      */
     public static final int SYSCALL_JOIN = 3;
     
+//amc code
     public static final int SYSCALL_GET_TIME = 4;
     
     // System call to give back local machine name
     public static final int SYS_LOCAL = 5;
     
+
     public static final int SYS_FORMAT = 6;
     public static final int SYS_CREATE = 7;
     public static final int SYS_READ = 8;
     public static final int SYS_WRITE = 9;
     public static final int SYS_DELETE = 10;
     public static final int SYS_DIR = 11;
-
+//end amc code
 
     //////////////// Error codes returned by interrupt()
 
@@ -197,6 +199,9 @@ public class Kernel {
     * @return a negative number indicating an error code, or other
     * values depending on the system call.
     */
+
+//amc code
+
     //This method initializes the contents of the disk with any data structures necessary to
 //represent an “empty” file system. This method should create an “empty” root directory
 //"/".
@@ -273,6 +278,8 @@ public class Kernel {
     
 //                        int kind              int i1                 i2 o1 o2    byte a[]
     //Kernel.interrupt(Kernel.INTERRUPT_USER, Kernel.SYSCALL_GET_TIME, 0, t, null, null);
+//end amc code
+
     public static int interrupt(int kind, int i1, int i2,
             Object o1, Object o2, byte a[])
     {
@@ -291,7 +298,7 @@ public class Kernel {
 
                 case SYSCALL_JOIN:
                     return doJoin(i2);
-
+//amc code
                 case SYSCALL_GET_TIME:
                     return doGetTime((long[]) o1);
                     
@@ -314,7 +321,7 @@ public class Kernel {
                     return doWrite((String) o1, (String) o2);
                 case SYS_DELETE: 
                     return doDelete((String) o1);                
-                    
+//end amc code                    
                 default:
                     return ERROR_BAD_ARGUMENT;
                 }

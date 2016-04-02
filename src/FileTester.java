@@ -17,7 +17,7 @@ import java.util.*;
  */
 public class FileTester {
     /** Synopsis of commands. */
-    private static String[] helpInfo = {
+/*    private static String[] helpInfo = {
         "help",
         "quit",
         "format dsize isize",
@@ -30,6 +30,16 @@ public class FileTester {
         "unlink fname",
         "list",
         "sync"
+    };
+*/
+    private static String[] helpInfo = {
+        "help",
+        "quit",
+        "format",
+        "create fname",
+        "read fname",
+        "write fname data",
+	"ls"
     };
 
     /** Main program.
